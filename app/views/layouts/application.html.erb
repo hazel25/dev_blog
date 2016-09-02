@@ -2,15 +2,32 @@
 <html>
   <head>
     <title>Blog</title>
-     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
      
   </head>
+  <header class="navbar navbar-default" role="navigation">
+    <div class="navbar-inner">
+      <div class="container">
+        <div id="logo" class="navbar-brand"><%= link_to "Blog", root_path %></div>
+        <nav class="collapse navbar-collapse navbar-ex1-collapse">
+            <body>
+              <ul class="nav navbar-nav pull-right">
+              <li><a href="#"><span class="glyphicon glyphicon-user"></span><%= link_to "Home", root_path %></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-new post"></span><%= link_to "New Post", new_post_path %></a></li>
+                     
+             </ul>
+       
+        </nav>
+        </div>
+      </div>
+    </div>
+    </header>
 
-  <body>
-  <%= link_to "Home", root_path %>
-  <%= link_to "New Post", new_post_path %>
-    <%= yield %>
+  <div id="main_content" class="container">
+    <%= yield %> 
+  </div>
+
   </body>
 </html>
